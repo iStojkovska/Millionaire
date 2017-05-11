@@ -31,3 +31,16 @@ E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\Millionaire-483bf6daf2544ac5e
 E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\Millionaire-483bf6daf2544ac5e9be6f9a6f198c5bc7e3de66\Millionaire-483bf6daf2544ac5e9be6f9a6f198c5bc7e3de66\VP2017\VP2017\bin\Debug\DataBase\Questions_log.ldf
 E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\Millionaire-483bf6daf2544ac5e9be6f9a6f198c5bc7e3de66\Millionaire-483bf6daf2544ac5e9be6f9a6f198c5bc7e3de66\VP2017\VP2017\bin\Debug\VP2017.exe
 E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\Millionaire-483bf6daf2544ac5e9be6f9a6f198c5bc7e3de66\Millionaire-483bf6daf2544ac5e9be6f9a6f198c5bc7e3de66\VP2017\VP2017\bin\Debug\VP2017.pdb
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\bin\Debug\VP2017.exe.config
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Debug\VP2017.exe
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Debug\VP2017.pdb
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\bin\Debug\DataBase\Questions.mdf
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\bin\Debug\DataBase\Questions_log.ldf
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\bin\Debug\VP2017.exe
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\bin\Debug\VP2017.pdb
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Debug\VP2017.csprojResolveAssemblyReference.cache
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Debug\VP2017.Form1.resources
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Debug\VP2017.FormFinalAnswer.resources
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Debug\VP2017.Properties.Resources.resources
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Debug\VP2017.csproj.GenerateResource.Cache
+E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Debug\VP2017.Status.resources

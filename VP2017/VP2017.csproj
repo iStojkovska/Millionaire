@@ -62,27 +62,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="C:\Users\Sintija\Desktop\VPPOJ\Form1.cs">
       <SubType>Form</SubType>
+      <Link>Form1.cs</Link>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="C:\Users\Sintija\Desktop\VPPOJ\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+      <Link>Form1.Designer.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\Sintija\Desktop\VPPOJ\FormFinalAnswer.cs">
+      <SubType>Form</SubType>
+      <Link>FormFinalAnswer.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\Sintija\Desktop\VPPOJ\FormFinalAnswer.Designer.cs">
+      <DependentUpon>FormFinalAnswer.cs</DependentUpon>
+      <Link>FormFinalAnswer.Designer.cs</Link>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="C:\Users\Sintija\Desktop\VPPOJ\Status.cs">
+      <SubType>Form</SubType>
+      <Link>Status.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\Sintija\Desktop\VPPOJ\Status.Designer.cs">
+      <DependentUpon>Status.cs</DependentUpon>
+      <Link>Status.Designer.cs</Link>
+    </Compile>
+    <EmbeddedResource Include="C:\Users\Sintija\Desktop\VPPOJ\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <Link>Form1.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C:\Users\Sintija\Desktop\VPPOJ\FormFinalAnswer.resx">
+      <DependentUpon>FormFinalAnswer.cs</DependentUpon>
+      <Link>FormFinalAnswer.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="C:\Users\Sintija\Desktop\VPPOJ\Status.resx">
+      <DependentUpon>Status.cs</DependentUpon>
+      <Link>Status.resx</Link>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -124,49 +151,49 @@
     <None Include="Images\Initial_Bar.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P1.jpg" />
+    <None Include="Images\1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P2.jpg" />
+    <None Include="Images\2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P3.jpg" />
+    <None Include="Images\3.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P4.jpg" />
+    <None Include="Images\4.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P5.jpg" />
+    <None Include="Images\5.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P6.jpg" />
+    <None Include="Images\6.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P7.jpg" />
+    <None Include="Images\7.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P8.jpg" />
+    <None Include="Images\8.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P9.jpg" />
+    <None Include="Images\9.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P10.jpg" />
+    <None Include="Images\10.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P11.jpg" />
+    <None Include="Images\11.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P12.jpg" />
+    <None Include="Images\12.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P13.jpg" />
+    <None Include="Images\13.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P14.jpg" />
+    <None Include="Images\14.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\P15.jpg" />
+    <None Include="Images\15.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\P15POBEDA.jpg" />
