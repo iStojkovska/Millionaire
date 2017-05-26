@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFinalAnswer));
             this.lblKonecenOdgovor = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnNe = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             // btnOK
             // 
             this.btnOK.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOK.FlatAppearance.BorderSize = 0;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -62,6 +64,7 @@
             // btnNe
             // 
             this.btnNe.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnNe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNe.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNe.Location = new System.Drawing.Point(198, 99);
@@ -81,8 +84,13 @@
             this.Controls.Add(this.btnNe);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblKonecenOdgovor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(396, 187);
+            this.MinimumSize = new System.Drawing.Size(396, 187);
             this.Name = "FormFinalAnswer";
-            this.Text = "FormFinalAnswer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormFinalAnswer_FormClosed);
+            this.Load += new System.EventHandler(this.FormFinalAnswer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

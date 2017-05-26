@@ -29,50 +29,94 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Status));
+            this.timerBoja = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.label1 = new System.Windows.Forms.TextBox();
+            this.lblPrice = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // timerBoja
+            // 
+            this.timerBoja.Tick += new System.EventHandler(this.timerBoja_Tick);
             // 
             // timer1
             // 
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // imageList1
+            // label1
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "1.jpg");
-            this.imageList1.Images.SetKeyName(1, "2.jpg");
-            this.imageList1.Images.SetKeyName(2, "3.jpg");
-            this.imageList1.Images.SetKeyName(3, "4.jpg");
-            this.imageList1.Images.SetKeyName(4, "5.jpg");
-            this.imageList1.Images.SetKeyName(5, "6.jpg");
-            this.imageList1.Images.SetKeyName(6, "7.jpg");
-            this.imageList1.Images.SetKeyName(7, "8.jpg");
-            this.imageList1.Images.SetKeyName(8, "9.jpg");
-            this.imageList1.Images.SetKeyName(9, "10.jpg");
-            this.imageList1.Images.SetKeyName(10, "11.jpg");
-            this.imageList1.Images.SetKeyName(11, "12.jpg");
-            this.imageList1.Images.SetKeyName(12, "13.jpg");
-            this.imageList1.Images.SetKeyName(13, "14.jpg");
-            this.imageList1.Images.SetKeyName(14, "15.jpg");
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.label1.Enabled = false;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Multiline = true;
+            this.label1.Name = "label1";
+            this.label1.ReadOnly = true;
+            this.label1.Size = new System.Drawing.Size(326, 63);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Освоена сума:";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.BackColor = System.Drawing.Color.Black;
+            this.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblPrice.Enabled = false;
+            this.lblPrice.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPrice.ForeColor = System.Drawing.Color.White;
+            this.lblPrice.Location = new System.Drawing.Point(12, 63);
+            this.lblPrice.Multiline = true;
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.ReadOnly = true;
+            this.lblPrice.Size = new System.Drawing.Size(326, 63);
+            this.lblPrice.TabIndex = 9;
+            this.lblPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.label3.Enabled = false;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 114);
+            this.label3.Multiline = true;
+            this.label3.Name = "label3";
+            this.label3.ReadOnly = true;
+            this.label3.Size = new System.Drawing.Size(326, 63);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "денари";
+            this.label3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 443);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(350, 189);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Status";
-            this.Text = "Status";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.Status_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Timer timerBoja;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TextBox label1;
+        private System.Windows.Forms.TextBox lblPrice;
+        private System.Windows.Forms.TextBox label3;
+
     }
 }

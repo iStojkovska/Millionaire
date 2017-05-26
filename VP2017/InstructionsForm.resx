@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Играта има точно 15 прашања.
+Секој точен одговор носи одредена сума на пари.
+Но, точно 3 суми се загарантирани.
+Тоа се 5.000, 125.000 и 4.000.000 денари.
+На екранот се појаува прашањето и вие со маусот треба да кликнете врз одговорот кој го сметате за точен.
+Имате три вида помош, тоа се 50-50, Повикај пријател и Прашај ја публиката.
+Доколку го одговорите прашањето точно, преминувате на следното. 
+Доколку не го одговорите прашањето точно, ја земате последната освоена загарантирана сума и можете да почнете нова игра.
+Ви посакуваме среќа.
+
+
+</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AAAFBAb/BQQH/wUEBv8AAQL/EQcN/z0kMP9mQVL/c09k/31cb/9pTF7/OB4q/xAECP8BAwT/BAUH/wUE
+        B/8EBAb/BQQH/wQEBv8EBAb/Nh0s/3NOX/9+XGn/aVlj/4Rbcf+PbIX/iWh7/2g9S/9sR1f/NRsl/wMB
+        A/8DBAX/BQQH/wYFB/8AAAH/UjxK/4pgdP9pSWL/XURe/2pLcv9YUVv/qYC0/2RKaf9RQ1f/a1Ne/5Zv
+        gP9ZPUv/BwUG/wQEBv8AAAD/OCQu/49wf/9/XHL/o3Ss/1lJWv+gWXT/mnJ7/5p4g/9kUEz/lV2J/09H
+        T/+OboD/qZKj/0EsNv8AAAH/FAoQ/39Yaf9iTlj/S0dY/3xfav+gd4P/UlNB/7uUof/IpLH/aVxV/6Rt
+        ev+BcHv/r4e6/4BXZ/9jN0j/EQgM/0QtPv90WG//a1x0/61xkv+nbnb/y6Gv/8uqtv9wh2z/2L7H/293
+        dP/Wssf/qoiS/2FQYf9QPU//WDpN/zMcKP9LKjn/aD5U/3Fbe/9kWlv/b21l/3R/aP+ir5v/sL+p/6G4
+        n/+qtqT/0bLF/1BTR/+VU2n/clqD/1E4Q/9WK0L/blhl/5CCif+Lc4T/h4KH/5GAhv+hlpv/fpKC/6qr
+        rv+dpKD/r62s/4OHhP+MfoX/nYWP/2pkbP9yYmv/XzpK/3xoc/+PhIf/cnNw/5iHjv+KhIf/jY6O/5ma
+        lf+Vnpr/qq+t/5CflP+hmJ7/jIaL/4aDhv+BcYT/koWN/3dmb/9JJzb/Tjc//39biP+PWmb/WmVY/9W0
+        w/+YrJT/nbmf/7S/q/+wtan/c39v/2hgXP9dSUr/b1x0/21KYP9XNkX/Pik0/3JUaP9tV3L/blpr/6ly
+        ff/FoK7/eo13/93Cy/9+lnX/zaqx/9ivx/+2iZf/omiM/09CVf9XPUz/Nh8o/xgNEv+GZnH/hWNx/5Vl
+        nv9yX2T/tn+L/2xlVP/Qo7P/r42R/1ldSf+ZaHj/emNx/1xaaP94Xmj/ZkFL/xAHCf8AAAH/NyUu/41v
+        fv9+YXH/Xlho/5xgjP9pT03/nHyG/5Zja/+bXnb/Wkpg/5Vfkf+Ud4b/sZWl/0AtNv8AAAH/BQUH/wMA
+        Av9RNj7/lWp9/2tPYf9XSV3/blN0/6Z/q/9PRVL/bVBy/1hAWf93WWv/j2x5/1A5Qv8IBQj/BAMG/wUE
+        B/8DBAb/BQYI/zgiLv9wTV3/g2Bp/4xyf/+Qb4D/e1dp/3tvdP9vRlH/akZR/zMbJP8EAgT/AwMF/wUE
+        B/8EBAb/BQQH/wQEBv8AAgL/EwkN/zsfLP9pS1j/fFpq/2c+Tf9hQk3/OB8o/xQGCv8BAwP/BAUH/wUE
+        B/8EBAb/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
+</root>
