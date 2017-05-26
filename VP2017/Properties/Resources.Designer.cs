@@ -383,6 +383,26 @@ namespace VP2017.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Background2 {
+            get {
+                object obj = ResourceManager.GetObject("Background2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Background3 {
+            get {
+                object obj = ResourceManager.GetObject("Background3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Classic5050 {
             get {
                 object obj = ResourceManager.GetObject("Classic5050", resourceCulture);
@@ -616,16 +636,6 @@ namespace VP2017.Properties {
         internal static System.Drawing.Bitmap qBox {
             get {
                 object obj = ResourceManager.GetObject("qBox", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QuestionBox {
-            get {
-                object obj = ResourceManager.GetObject("QuestionBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
