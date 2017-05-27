@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExitForm));
             this.tbOtkaziSe = new System.Windows.Forms.TextBox();
             this.tbKolkuDenari = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
@@ -90,6 +91,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbKolkuDenari);
             this.Controls.Add(this.tbOtkaziSe);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(396, 224);
             this.MinimumSize = new System.Drawing.Size(396, 224);
             this.Name = "ExitForm";

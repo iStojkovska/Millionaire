@@ -110,7 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(382, 179);
+            this.ClientSize = new System.Drawing.Size(382, 184);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tbOsvoenaSuma);
             this.Controls.Add(this.tbTocenOdgovor);
@@ -122,6 +122,7 @@
             this.MinimumSize = new System.Drawing.Size(388, 208);
             this.Name = "WrongAnswerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WrongAnswerForm_FormClosed);
             this.Load += new System.EventHandler(this.WrongAnswerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

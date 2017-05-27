@@ -36,7 +36,7 @@ namespace VP2017
             name = null;
             AnswerMale = null;
             AnswerFemale = null; 
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;//OVA KAJ SITE
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         }
         private string ChooseName(int k)
         {
@@ -93,6 +93,12 @@ namespace VP2017
             return percent;
         }
 
+        private void GenerateAnswerString(string answer, int percent)
+        {
+            AnswerFemale = string.Format("Мојот одговор е „{0}“, сигурна сум {1}%", answer, percent);
+            AnswerMale = string.Format("Мојот одговор е „{0}“, сигурен сум {1}%", answer, percent);
+        }
+
         private void GenerateAnswer(int k)
         {
 
@@ -100,28 +106,46 @@ namespace VP2017
             switch (k)
             {
                 case 0:
+
                     percent = GeneratePercent(ansA, correctAnswer);
-                    AnswerFemale = string.Format("Мојот одговор е {0}, сигурна сум {1}%",ansA,percent);
-                    AnswerMale = string.Format("Мојот одговор е {0}, сигурен сум {1}%", ansA, percent);
+                    GenerateAnswerString(ansA, percent);
                     break;
                 case 1:
                     percent = GeneratePercent(ansB, correctAnswer);
-                    AnswerFemale = string.Format("Мојот одговор е {0}, сигурна сум {1}%", ansB, percent);
-                    AnswerMale = string.Format("Мојот одговор е {0}, сигурен сум {1}%", ansB, percent);
+                    GenerateAnswerString(ansB, percent);
                     break;
                 case 2:
                     percent = GeneratePercent(ansC, correctAnswer);
-                     AnswerFemale = string.Format("Мојот одговор е {0}, сигурна сум {1}%", ansC, percent);
-                     AnswerMale = string.Format("Мојот одговор е {0}, сигурен сум {1}%", ansC, percent);
+                    GenerateAnswerString(ansC, percent);
                     break;
                 case 3:
                     percent = GeneratePercent(ansD, correctAnswer);
-                     AnswerFemale = string.Format("Мојот одговор е {0}, сигурна сум {1}%", ansD, percent);
-                     AnswerMale = string.Format("Мојот одговор е {0}, сигурен сум {1}%", ansD, percent);
+                    GenerateAnswerString(ansD, percent);
                     break;
             }
         }
-      
+
+        private int CheckIfEmpty(int k)
+        {
+            if (k == 0 && ansA.Length==0)
+            {
+                k = 1;
+            }
+            if (k == 1 && ansB.Length == 0)
+            {
+                k = 2;
+            }
+            if (k == 2 && ansC.Length == 0)
+            {
+                k = 3;
+            }
+            if (k == 3 && ansD.Length==0)
+            {
+                k = 0;
+            }
+            return k;
+        }
+
         private void CallForm_Load(object sender, EventArgs e)
         {
             k = random.Next(0, 10);
@@ -133,6 +157,7 @@ namespace VP2017
                 isFemale=true;
             }
             k = random.Next(0, 4);
+            k=CheckIfEmpty(k);
             GenerateAnswer(k);
             if (isFemale)
             {

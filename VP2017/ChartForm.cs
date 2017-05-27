@@ -27,13 +27,11 @@ namespace VP2017
             this.d = d;
             player = new SoundPlayer(path);
             player.Play();
-            timer1.Start();
+
         }
 
         private void ChartForm_Load(object sender, EventArgs e)
         {
-           // chartAudience.ChartAreas[0].AxisX.LineColor = Color.Red;
-           // chartAudience.ChartAreas[0].AxisY.LineColor = Color.Red;
             chartAudience.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.White;
             chartAudience.ChartAreas[0].AxisX.LabelStyle.ForeColor = Color.White;
             chartAudience.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.White;
@@ -41,7 +39,6 @@ namespace VP2017
             chartAudience.ChartAreas[0].AxisY.Maximum = 100;
             chartAudience.ChartAreas[0].AxisY.Minimum = 0;
             chartAudience.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-
             chartAudience.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             chartAudience.Series["Точен одговор"].Points.AddXY("A", a);
             chartAudience.Series["Точен одговор"].Points.AddXY("B", b);
@@ -49,7 +46,18 @@ namespace VP2017
             chartAudience.Series["Точен одговор"].Points.AddXY("D", d);
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            player.Stop();
+            this.Close();
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ChartForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             player.Stop();
             this.Close();

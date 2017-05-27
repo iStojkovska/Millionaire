@@ -18,6 +18,7 @@ namespace VP2017
             
             InitializeComponent();
             player = new SoundPlayer(path);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         }
 
         private void btnOK_Click(object sender, EventArgs e)

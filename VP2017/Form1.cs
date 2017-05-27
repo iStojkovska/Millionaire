@@ -10,12 +10,16 @@ using System.Data.SqlClient;
 using System.Media;
 using System.Configuration;
 using System.Configuration.Assemblies;
+using System.Data.SqlClient;
+using System.Threading.Tasks;
+using System.Web;
+using System.IO;
+
 namespace VP2017
 {
     public partial class Form1 : Form
     {
-        string path = "1001000 music.wav";
-        public SoundPlayer startSound;
+        #region Variables
         string correctAnswer;
         int i;
         List<int> Pominati;
@@ -25,9 +29,15 @@ namespace VP2017
         int SecondAnswer5050;
         bool Clicked_5050;
         bool Clicked_audience;
-        public bool isClosed;
         bool Clicked_phoneFriend;
+        public bool isClosed;        
         List<int> VrednostiABCD;
+        Random random;
+        string path = "1001000 music.wav";
+        SoundPlayer play;
+        #endregion
+
+        #region Constructor_Form1, Load method and Close method
         public Form1()
         {
             InitializeComponent();
@@ -41,15 +51,16 @@ namespace VP2017
             SecondAnswer5050 = 0;
             Clicked_5050 = false;
             Clicked_audience = false;
-            isClosed = false;
             Clicked_phoneFriend = false;
+            isClosed = false;
             VrednostiABCD = new List<int>();
-            startSound = new SoundPlayer(path);
+            random = new Random();
+            play = new SoundPlayer(path);
         }
-
+     
+       
         private void Form1_Load(object sender, EventArgs e)
         {
-            startSound.PlayLooping();
             pb5050.SizeMode = PictureBoxSizeMode.StretchImage;
             pb5050.Image = imageList1.Images[16];
             pbAskTheAudience.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -61,77 +72,53 @@ namespace VP2017
             pbQuestions.SizeMode = PictureBoxSizeMode.StretchImage;
             pbQuestions.Image = imageList1.Images[27];
             PopolniPrasanje();
-            startSound.PlayLooping();
+            //dodadeno!!!
+            play.PlayLooping();
         }
-        public void Find5050(string correctAnswer)
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Answers= new List<int>();
-            Answers.Add(1);
-            Answers.Add(2);
-            Answers.Add(3);
-            Answers.Add(4);
-            if (correctAnswer == btnAnswerA.Text) corrButton = 1;
-            else if (correctAnswer == btnAnswerB.Text) corrButton = 2;
-            else if (correctAnswer == btnAnswerC.Text) corrButton = 3;
-            else if (correctAnswer == btnAnswerD.Text) corrButton = 4;
-            Answers.RemoveAt(corrButton - 1);
-            Random random = new Random();
-            SecondAnswer5050 = random.Next(Answers.Count);
-            for (int l = 0; l < Answers.Count; l++)
-            {
-                if (SecondAnswer5050 == l)
-                {
-                    SecondAnswer5050 = Answers[l];
-                    break;
-                }
-            }
-                
-            if (corrButton != 1 && SecondAnswer5050 != 1) btnAnswerA.Text = "";
-            if (corrButton != 2 && SecondAnswer5050 != 2) btnAnswerB.Text = "";
-            if (corrButton != 3 && SecondAnswer5050 != 3) btnAnswerC.Text = "";
-            if (corrButton != 4 && SecondAnswer5050 != 4) btnAnswerD.Text = "";
+            //dodadeno!!!
+            play.Stop();
+            isClosed = true;
         }
+        #endregion 
 
-        
+        #region Functions
 
-        public void PopolniPrasanje()
+        private void PopolniPrasanje()
         {
+            //dodadeno!!!
+            play.PlayLooping();
+
+            EnableButtons();
             if (i <= 5)
             {
                 PopolniPrasanje1();
             }
             else if (i <= 10)
             {
-                Pominati = new List<int>();
+                if (i == 6)
+                {
+                    Pominati = new List<int>();
+                }
                 PopolniPrasanje2();
             }
             else if (i <= 15)
             {
-                Pominati = new List<int>();
+                if (i == 11)
+                {
+                    Pominati = new List<int>();
+                }
+
                 PopolniPrasanje3();
             }
-            
-
         }
-        private void PopolniPrasanje1()
+        private void GenerateTryBlockForQuestions(SqlConnection connection, SqlCommand cmd, int k)
         {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["mycon"].ConnectionString; ;
-            int k = 0;
-            Random rand = new Random();
-            k = rand.Next(6, 38);
-            while (Pominati.Contains(k))
+            connection.Open();
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if (i <= 5)
             {
-                k = rand.Next(6, 38);
-            }
-            Pominati.Add(k);
-            string sqlStr = "SELECT * FROM Level1";
-            SqlCommand cmd = new SqlCommand(sqlStr, connection);
-            try
-            {
-
-                connection.Open();
-                SqlDataReader sdr = cmd.ExecuteReader();
 
                 while (sdr.Read())
                 {
@@ -142,7 +129,6 @@ namespace VP2017
                     btnAnswerC.Text = sdr["c"].ToString();
                     btnAnswerD.Text = sdr["d"].ToString();
                     correctAnswer = sdr["answ"].ToString();
-
                     if (id == k)
                     {
                         break;
@@ -150,79 +136,8 @@ namespace VP2017
 
                 }
             }
-            catch (Exception e)
+            else
             {
-                tbQuestion.Text = e.Message;
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
-
-
-        private void PopolniPrasanje2()
-        {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["mycon"].ConnectionString; ;
-            int k = 0;
-            Random rand = new Random();
-            k = rand.Next(1, 28);
-            while (Pominati.Contains(k))
-            {
-                k = rand.Next(1, 28);
-            }
-            Pominati.Add(k);
-            string sqlStr = "SELECT * FROM Level2";
-           SqlCommand cmd = new SqlCommand(sqlStr, connection);
-            try
-            {
-                connection.Open();
-                SqlDataReader sdr = cmd.ExecuteReader();
-                while (sdr.Read())
-                {
-                    id=(int)sdr["quest_id"];
-                    tbQuestion.Text = sdr["quest"].ToString();
-                    btnAnswerA.Text = sdr["a"].ToString();
-                    btnAnswerB.Text = sdr["b"].ToString();
-                    btnAnswerC.Text = sdr["c"].ToString();
-                    btnAnswerD.Text = sdr["d"].ToString();
-                    correctAnswer = sdr["answ"].ToString();
-                    if (id == k)
-                    {
-                        break;
-                    }
-                }               
-            }
-            catch (Exception e)
-            {
-                tbQuestion.Text = e.Message;
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
-
-        private void PopolniPrasanje3()
-        {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["mycon"].ConnectionString; ;
-            int k = 0;
-            Random rand = new Random();
-            k = rand.Next(1, 18);
-            while (Pominati.Contains(k))
-            {
-                k = rand.Next(1, 18);
-            }
-            Pominati.Add(k);
-            string sqlStr = "SELECT * FROM Level3";
-            SqlCommand cmd = new SqlCommand(sqlStr, connection);
-
-            try
-            {
-                connection.Open();
-                SqlDataReader sdr = cmd.ExecuteReader();
                 while (sdr.Read())
                 {
                     id = (int)sdr["quest_id"];
@@ -238,6 +153,48 @@ namespace VP2017
                     }
 
                 }
+            }             
+        }
+        private int GenerateQuestionNumber()
+        {
+            int k = 0;
+            int lowestQuestionID=0;
+            int highestQuestionID=0;
+            if (i <= 5)
+            {
+                lowestQuestionID = 6;
+                highestQuestionID = 38;
+            }
+            else if (i <= 10)
+            {
+                lowestQuestionID = 1;
+                highestQuestionID = 28;
+            }
+            else if (i <= 15)
+            {
+                lowestQuestionID = 1;
+                highestQuestionID = 18;
+            }
+            k = random.Next(lowestQuestionID, highestQuestionID);
+            while (Pominati.Contains(k))
+            {
+                k = random.Next(lowestQuestionID, highestQuestionID);
+            }
+            Pominati.Add(k);
+            return k;
+        }
+        private void PopolniPrasanje1()
+        {
+            string sqlStr = "SELECT * FROM Level1";
+            SqlConnection connection = new SqlConnection();
+            string path = (Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
+            connection.ConnectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\DataBase\Questions.mdf;Integrated Security=True;User Instance=True";
+            int k = GenerateQuestionNumber();
+            SqlCommand cmd = new SqlCommand(sqlStr, connection);
+            try
+            {
+                GenerateTryBlockForQuestions(connection, cmd, k);
             }
             catch (Exception e)
             {
@@ -248,139 +205,116 @@ namespace VP2017
                 connection.Close();
             }
         }
-
-
-        private void btnAnswerB_Click(object sender, EventArgs e)
+        private void PopolniPrasanje2()
         {
-            FormFinalAnswer form = new FormFinalAnswer();
-            if (form.ShowDialog().Equals(DialogResult.OK))
+            string sqlStr = "SELECT * FROM Level2";
+            SqlConnection connection = new SqlConnection();
+            string path = (Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
+            connection.ConnectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\DataBase\Questions.mdf;Integrated Security=True;User Instance=True";
+            int k = GenerateQuestionNumber();
+            SqlCommand cmd = new SqlCommand(sqlStr, connection);
+            try
             {
-                if (btnAnswerB.Text == correctAnswer)
-                {
-                    Status form1 = new Status(i);
-                    form1.ShowDialog();
-                    i++;
-                    PopolniPrasanje();
-                }
-                else
-                {
-                    WrongAnswerForm wrongform = new WrongAnswerForm(i,correctAnswer);
-                    wrongform.ShowDialog();
-                    isClosed = true;
-                    this.Close();
-                }
+                GenerateTryBlockForQuestions(connection, cmd, k);              
             }
-            startSound.PlayLooping();
-        }
-
-        private void btnAnswerC_Click(object sender, EventArgs e)
-        {
-            FormFinalAnswer form = new FormFinalAnswer();
-            if (form.ShowDialog().Equals(DialogResult.OK))
+            catch (Exception e)
             {
-                if (btnAnswerC.Text == correctAnswer)
-                {
-                    Status form1 = new Status(i);
-                    form1.ShowDialog();
-                    i++;
-                    PopolniPrasanje();
-                }
-                else
-                {
-                    WrongAnswerForm wrongform = new WrongAnswerForm(i, correctAnswer);
-                    wrongform.ShowDialog();
-                    isClosed = true;
-                    this.Close();
-                }
+                tbQuestion.Text = e.Message;
             }
-            startSound.PlayLooping();
-        }
-
-        private void btnAnswerD_Click(object sender, EventArgs e)
-        {
-            FormFinalAnswer form = new FormFinalAnswer();
-            if (form.ShowDialog().Equals(DialogResult.OK))
+            finally
             {
-                if (btnAnswerD.Text == correctAnswer)
-                {
-                    Status form1 = new Status(i);
-                    form1.ShowDialog();
-                    i++;
-                    PopolniPrasanje();
-                }
-                else
-                {
-                    WrongAnswerForm wrongform = new WrongAnswerForm(i, correctAnswer);
-                    wrongform.ShowDialog();
-                    isClosed = true;
-                    this.Close();
-                }
+                connection.Close();
             }
-            startSound.PlayLooping();
         }
-
-
-        private void pb5050_MouseClick(object sender, MouseEventArgs e)
+        private void PopolniPrasanje3()
         {
-
-            if (!Clicked_5050)
+            string sqlStr = "SELECT * FROM Level3";
+            SqlConnection connection = new SqlConnection();
+            string path = (Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
+            connection.ConnectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\DataBase\Questions.mdf;Integrated Security=True;User Instance=True";
+            int k = GenerateQuestionNumber();
+            SqlCommand cmd = new SqlCommand(sqlStr, connection);
+            try
             {
-                Find5050(correctAnswer);
-                Clicked_5050 = true;
+                GenerateTryBlockForQuestions(connection, cmd, k);
             }
-            
-                pb5050.SizeMode = PictureBoxSizeMode.StretchImage;
-                pb5050.Image = imageList1.Images[17];
-        }
-
-        private void pbCall_Click(object sender, EventArgs e)
-        {
-            if (!Clicked_phoneFriend)
+            catch (Exception e)
             {
-                CallForm callform = new CallForm(correctAnswer, btnAnswerA.Text, btnAnswerB.Text, btnAnswerC.Text, btnAnswerD.Text);
-                callform.ShowDialog();
+                tbQuestion.Text = e.Message;
             }
-            pbCall.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbCall.Image = imageList1.Images[26];
+            finally
+            {
+                connection.Close();
+            }
         }
-
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private void WrongAnswer()
         {
-            startSound.Stop();
+            WrongAnswerForm wrongform = new WrongAnswerForm(i, correctAnswer);
+            wrongform.ShowDialog();
             isClosed = true;
+            this.Close();
         }
-
-        private void pbAskTheAudience_Click(object sender, EventArgs e)
+        private void Find5050(string correctAnswer)
         {
-            if (!Clicked_audience)
+            Answers = new List<int>();
+            Answers.Add(1);
+            Answers.Add(2);
+            Answers.Add(3);
+            Answers.Add(4);
+            if (correctAnswer == btnAnswerA.Text) corrButton = 1;
+            else if (correctAnswer == btnAnswerB.Text) corrButton = 2;
+            else if (correctAnswer == btnAnswerC.Text) corrButton = 3;
+            else if (correctAnswer == btnAnswerD.Text) corrButton = 4;
+            Answers.RemoveAt(corrButton - 1);
+            SecondAnswer5050 = random.Next(Answers.Count);
+            for (int l = 0; l < Answers.Count; l++)
             {
-                FindAnswerFromAudience(correctAnswer);
-                Clicked_audience = true;
+                if (SecondAnswer5050 == l)
+                {
+                    SecondAnswer5050 = Answers[l];
+                    break;
+                }
             }
-
-            pbAskTheAudience.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbAskTheAudience.Image = imageList1.Images[19];
+            HelperFunctFor5050(corrButton, SecondAnswer5050);
         }
-
-        private List<int> PopolniABCD(int a, int b, int c, int d, int granicaLevo, int granicaDesno)
+        private void HelperFunctFor5050(int corrButton, int SecondAnswer5050)
         {
-            Random rand = new Random();
-            List<int> vrednosti = new List<int>();
-            a = rand.Next(granicaLevo, granicaDesno);
-            vrednosti.Add(a);
-            b = rand.Next(0, 100 - a + 1);
-            vrednosti.Add(b);
-            c = rand.Next(0, 100 - a - b + 1);
-            vrednosti.Add(c);
-            d = rand.Next(0, 100 - a - b - c + 1);
-            vrednosti.Add(d);
-            return vrednosti;
+            if (corrButton != 1 && SecondAnswer5050 != 1)
+            {
+                btnAnswerA.Text = "";
+                btnAnswerA.Enabled = false;
+            }
+            if (corrButton != 2 && SecondAnswer5050 != 2)
+            {
+                btnAnswerB.Text = "";
+                btnAnswerB.Enabled = false;
+            }
+            if (corrButton != 3 && SecondAnswer5050 != 3)
+            {
+                btnAnswerC.Text = "";
+                btnAnswerC.Enabled = false;
+            }
+            if (corrButton != 4 && SecondAnswer5050 != 4)
+            {
+                btnAnswerD.Text = "";
+                btnAnswerD.Enabled = false;
+            }
         }
-
+        private void EnableButtons()
+        {
+            btnAnswerA.Enabled = true;
+            btnAnswerB.Enabled = true;
+            btnAnswerC.Enabled = true;
+            btnAnswerD.Enabled = true;
+            pbAskTheAudience.Enabled = true;
+            pbCall.Enabled = true;
+        }
         private void FindAnswerFromAudience(string correctAnswer)
         {
-            int a=0, b=0, c=0, d=0; //procentite ke bidat ovie
-           
+            int a = 0, b = 0, c = 0, d = 0; //procentite ke bidat ovie
+
             if (correctAnswer == btnAnswerA.Text)
                 corrButton = 1;
             else if (correctAnswer == btnAnswerB.Text)
@@ -389,110 +323,274 @@ namespace VP2017
                 corrButton = 3;
             else if (correctAnswer == btnAnswerD.Text)
                 corrButton = 4;
-            Random rand = new Random();
             if (i <= 5) // prvo nivo
             {
                 if (corrButton == 1)
                 {
-                   // VrednostiABCD = PopolniABCD(a, b, c, d, 90, 101);
-                    a = rand.Next(90, 101);
-                    b = rand.Next(0, 100 - b + 1);
-                    c = rand.Next(0, 100 - b - a + 1);
-                    d = rand.Next(0, 100 - b - a - c + 1);
+                    a = random.Next(90, 101);
+                    b = random.Next(0, 100 - a + 1);
+                    c = random.Next(0, 100 - a - b + 1);
+                    d = random.Next(0, 100 - b - a - c + 1);
                 }
                 else if (corrButton == 2)
                 {
-                    //PopolniABCD(b, a, c, d, 90, 101);
-                    b = rand.Next(90, 101);
-                    a = rand.Next(0, 100 - b + 1);
-                    c = rand.Next(0, 100 - b - a + 1);
-                    d = rand.Next(0, 100 - b - a - c + 1);
+                    b = random.Next(90, 101);
+                    a = random.Next(0, 100 - b + 1);
+                    c = random.Next(0, 100 - b - a + 1);
+                    d = random.Next(0, 100 - b - a - c + 1);
                 }
                 else if (corrButton == 3)
                 {
-                    //PopolniABCD(c, b, a, d, 90, 101);
-                    c = rand.Next(90, 101);
-                    b = rand.Next(0, 100 - c + 1);
-                    a = rand.Next(0, 100 - c - b + 1);
-                    d = rand.Next(0, 100 - c - b - a + 1);
+                    c = random.Next(90, 101);
+                    b = random.Next(0, 100 - c + 1);
+                    a = random.Next(0, 100 - c - b + 1);
+                    d = random.Next(0, 100 - c - b - a + 1);
                 }
                 else if (corrButton == 4)
                 {
-                    //PopolniABCD(d, b, c, a, 90, 101);
-                    d = rand.Next(90, 101);
-                    b = rand.Next(0, 100 - d + 1);
-                    c = rand.Next(0, 100 - d - b + 1);
-                    a = rand.Next(0, 100 - d - b - c + 1);
+                    d = random.Next(90, 101);
+                    b = random.Next(0, 100 - d + 1);
+                    c = random.Next(0, 100 - d - b + 1);
+                    a = random.Next(0, 100 - d - b - c + 1);
                 }
-                
             }
             else if (i <= 10)
             {
                 if (corrButton == 1)
                 {
-                    a = rand.Next(60, 81);
-                    b = rand.Next(0, 100 - a + 1);
-                    c = rand.Next(0, 100 - a - b + 1);
-                    d = rand.Next(0, 100 - a - b - c + 1);
+                    a = random.Next(60, 81);
+                    b = random.Next(0, 100 - a + 1);
+                    c = random.Next(0, 100 - a - b + 1);
+                    d = random.Next(0, 100 - a - b - c + 1);
                 }
                 else if (corrButton == 2)
                 {
-                    b = rand.Next(60, 81);
-                    a = rand.Next(0, 100 - b + 1);
-                    c = rand.Next(0, 100 - b - a + 1);
-                    d = rand.Next(0, 100 - b - a - c + 1);
+                    b = random.Next(60, 81);
+                    a = random.Next(0, 100 - b + 1);
+                    c = random.Next(0, 100 - b - a + 1);
+                    d = random.Next(0, 100 - b - a - c + 1);
                 }
                 else if (corrButton == 3)
                 {
-                    c = rand.Next(60, 81);
-                    b = rand.Next(0, 100 - c + 1);
-                    a = rand.Next(0, 100 - c - b + 1);
-                    d = rand.Next(0, 100 - c - b - a + 1);
+                    c = random.Next(60, 81);
+                    b = random.Next(0, 100 - c + 1);
+                    a = random.Next(0, 100 - c - b + 1);
+                    d = random.Next(0, 100 - c - b - a + 1);
                 }
                 else if (corrButton == 4)
                 {
-                    d = rand.Next(60, 81);
-                    b = rand.Next(0, 100 - d + 1);
-                    c = rand.Next(0, 100 - d - b + 1);
-                    a = rand.Next(0, 100 - d - b - c + 1);
+                    d = random.Next(60, 81);
+                    b = random.Next(0, 100 - d + 1);
+                    c = random.Next(0, 100 - d - b + 1);
+                    a = random.Next(0, 100 - d - b - c + 1);
                 }
             }
             else if (i <= 15)
             {
-                    a = rand.Next(0, 50);
-                    b = rand.Next(0, 100 - a + 1);
-                    c = rand.Next(0, 100 - a - b + 1);
-                    d = rand.Next(0, 100 - a - b - c + 1);
+                a = random.Next(0, 50);
+                b = random.Next(0, 100 - a + 1);
+                c = random.Next(0, 100 - a - b + 1);
+                d = random.Next(0, 100 - a - b - c + 1);
             }
 
             ChartForm chartform = new ChartForm(a, b, c, d);
             chartform.ShowDialog();
-        }
+        }      
+#endregion
 
+        #region Buttons_Click
+
+        #region A_B_C_D_buttons click
         private void btnAnswerA_Click(object sender, EventArgs e)
         {
+            //dodadeno!!!
+            play.Stop();
+            btnAnswerA.ForeColor = Color.Orange;
             FormFinalAnswer form = new FormFinalAnswer();
             if (form.ShowDialog().Equals(DialogResult.OK))
             {
                 if (btnAnswerA.Text == correctAnswer)
                 {
-                    Status form1 = new Status(i);
-                    form1.ShowDialog();
-                    i++;
-                    PopolniPrasanje();
-
+                    btnAnswerA.ForeColor = Color.Green;
+                    if (i == 15)
+                    {
+                        WinnerForm winner = new WinnerForm();
+                        winner.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Status form1 = new Status(i);
+                        form1.ShowDialog();
+                        i++;
+                        PopolniPrasanje();
+                    }
                 }
                 else
                 {
-                    WrongAnswerForm wrongform = new WrongAnswerForm(i, correctAnswer);
-                    wrongform.ShowDialog();
-                    isClosed = true;
-                    this.Close();
+                    WrongAnswer();
                 }
             }
-            startSound.PlayLooping();
-                    
+            else
+            {
+                play.PlayLooping();
+            }
+            btnAnswerA.ForeColor = Color.White;
         }
+
+        private void btnAnswerB_Click(object sender, EventArgs e)
+        {
+            //dodadeno!!!
+            play.Stop();
+            btnAnswerB.ForeColor = Color.Orange;
+            FormFinalAnswer form = new FormFinalAnswer();
+            if (form.ShowDialog().Equals(DialogResult.OK))
+            {
+                if (btnAnswerB.Text == correctAnswer)
+                {
+                    btnAnswerB.ForeColor = Color.Green;
+                    if (i == 15)
+                    {
+                        WinnerForm winner = new WinnerForm();
+                        winner.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Status form1 = new Status(i);
+                        form1.ShowDialog();
+                        i++;
+                        PopolniPrasanje();
+                    }
+                }
+                else
+                {
+                    WrongAnswer();
+                }
+            }
+            else
+            {
+                play.PlayLooping();
+            }
+            btnAnswerB.ForeColor = Color.White;
+        }
+
+        private void btnAnswerC_Click(object sender, EventArgs e)
+        {
+            //dodadeno!!!
+            play.Stop();
+            btnAnswerC.ForeColor = Color.Orange;
+            FormFinalAnswer form = new FormFinalAnswer();
+            if (form.ShowDialog().Equals(DialogResult.OK))
+            {
+                if (btnAnswerC.Text == correctAnswer)
+                {
+                    btnAnswerC.ForeColor = Color.Green;
+                    if (i == 15)
+                    {
+                        WinnerForm winner = new WinnerForm();
+                        winner.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Status form1 = new Status(i);
+                        form1.ShowDialog();
+                        i++;
+                        PopolniPrasanje();
+                    }
+                }
+                else
+                {
+                    WrongAnswer();
+                }
+            }
+            else
+            {
+                play.PlayLooping();
+            }
+            btnAnswerC.ForeColor = Color.White;
+        }
+
+        private void btnAnswerD_Click(object sender, EventArgs e)
+        {
+            //dodadeno!!!
+            play.Stop();
+            btnAnswerD.ForeColor = Color.Orange;
+            FormFinalAnswer form = new FormFinalAnswer();
+            if (form.ShowDialog().Equals(DialogResult.OK))
+            {
+                if (btnAnswerD.Text == correctAnswer)
+                {
+                    btnAnswerD.ForeColor = Color.Green;
+                    if (i == 15)
+                    {
+                        WinnerForm winner = new WinnerForm();
+                        winner.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Status form1 = new Status(i);
+                        form1.ShowDialog();
+                        i++;
+                        PopolniPrasanje();
+                    }
+                }
+                else
+                {
+                    WrongAnswer();
+                }
+            }
+            else
+            {
+                play.PlayLooping();
+            }
+            btnAnswerD.ForeColor = Color.White;
+        }
+        #endregion
+
+        #region Joker_buttons (Ask the audience, 50/50, Call a friend)
+        private void pb5050_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!Clicked_5050)
+            {
+                Find5050(correctAnswer);
+                Clicked_5050 = true;
+            }
+            pb5050.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb5050.Image = imageList1.Images[17];
+            pbAskTheAudience.Enabled = false;
+            pbCall.Enabled = false;
+        }
+        private void pbCall_Click(object sender, EventArgs e)
+        {
+            //dodadeno!!!
+            play.Stop();
+            if (!Clicked_phoneFriend)
+            {
+                CallForm callform = new CallForm(correctAnswer, btnAnswerA.Text, btnAnswerB.Text, btnAnswerC.Text, btnAnswerD.Text);
+                callform.ShowDialog();
+                Clicked_phoneFriend = true;
+                play.PlayLooping();
+            }
+            pbCall.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbCall.Image = imageList1.Images[26];
+        }
+        private void pbAskTheAudience_Click(object sender, EventArgs e)
+        {
+            play.Stop();
+            if (!Clicked_audience)
+            {
+                FindAnswerFromAudience(correctAnswer);
+                Clicked_audience = true;
+                play.PlayLooping();
+
+            }
+            pbAskTheAudience.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbAskTheAudience.Image = imageList1.Images[19];
+        }
+        #endregion
 
         private void pbOtkaziSe_Click(object sender, EventArgs e)
         {
@@ -501,5 +599,7 @@ namespace VP2017
             isClosed = true;
             this.Close();
         }
+       
+        #endregion
     }
 }

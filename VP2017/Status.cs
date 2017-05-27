@@ -25,11 +25,8 @@ namespace VP2017
             timer1.Start();
             timerBoja.Start();
             timerBoja.Tick += (s, e) =>
-            this.BackColor =
-                    this.BackColor == Color.Black ? c : Color.Black;
-            ProveriSuma(i);
-           
-            
+            this.BackColor = this.BackColor == Color.Black ? c : Color.Black;
+            ProveriSuma(i);       
         }
 
         private void ProveriSuma(int i)
@@ -52,15 +49,15 @@ namespace VP2017
             }
             else if (i == 5)
             {
-                label1.Text = "ЗАГАРАНТИРАНА СУМА ОД";
+                label1.Text = "Гарантирана сума:";
                 lblPrice.Text = "5.000";
-                label3.Text = "ДЕНАРИ";
+                label3.Text = "денари";
             }
             else if (i == 6)
             {
-                label1.Text = "ОСВОИВТЕ";
+                label1.Text = "Освоена сума:";
                 lblPrice.Text = "8.000";
-                label3.Text = "ДЕНАРИ";
+                label3.Text = "денари";
             }
             else if (i == 7)
             {
@@ -76,15 +73,15 @@ namespace VP2017
             }
             else if (i == 10)
             {
-                label1.Text = "ЗАГАРАНТИРАНА СУМА ОД";
+                label1.Text = "Гарантирана сума:";
                 lblPrice.Text = "125.000";
-                label3.Text = "ДЕНАРИ";
+                label3.Text = "денари";
             }
             else if (i == 11)
             {
-                label1.Text = "ОСВОИВТЕ";
+                label1.Text = "Освоена сума:";
                 lblPrice.Text = "250.000";
-                label3.Text = "ДЕНАРИ";
+                label3.Text = "денари";
             }
             else if (i == 12)
             {
@@ -100,9 +97,9 @@ namespace VP2017
             }
             else if (i == 15)
             {
-                label1.Text = "ОСВОИВТЕ";
+                label1.Text = "Освоена сума:";
                 lblPrice.Text = "4.000.000";
-                label3.Text = "ДЕНАРИ";
+                label3.Text = "денари";
             }
         }
 
@@ -112,18 +109,11 @@ namespace VP2017
             player.Stop();
         }
 
-        private void Status_Load(object sender, EventArgs e)
+        private void Status_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
-        }
-
-        private void timerBoja_Tick(object sender, EventArgs e)
-        {
+            timer1.Stop();
 
         }
-
-       
-
         
     }
 }

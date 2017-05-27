@@ -65,6 +65,7 @@
             // 
             this.btnNe.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnNe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNe.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnNe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNe.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNe.Location = new System.Drawing.Point(198, 99);
@@ -77,10 +78,12 @@
             // 
             // FormFinalAnswer
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(380, 149);
+            this.CancelButton = this.btnNe;
+            this.ClientSize = new System.Drawing.Size(380, 148);
             this.Controls.Add(this.btnNe);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblKonecenOdgovor);

@@ -22,13 +22,15 @@ namespace VP2017
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            //player.Stop();
+            player.Stop();
             Form1 form1 = new Form1();
             this.Visible = false;
             form1.ShowDialog();
             if (form1.isClosed)
             {
                 this.Visible = true;
+                player.Dispose();
+                player = new SoundPlayer(path);
                 player.PlayLooping();
             }
 
@@ -41,7 +43,7 @@ namespace VP2017
 
         private void StartForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
+            player.Stop();
         }
 
         private void btnInstructions_Click(object sender, EventArgs e)

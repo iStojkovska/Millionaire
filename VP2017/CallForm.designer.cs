@@ -67,7 +67,7 @@
             this.tbNameAnswer.ReadOnly = true;
             this.tbNameAnswer.Size = new System.Drawing.Size(356, 96);
             this.tbNameAnswer.TabIndex = 2;
-            this.tbNameAnswer.Text = "jksdf";
+            this.tbNameAnswer.Text = "Одговор од пријател";
             this.tbNameAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnClose

@@ -13,16 +13,16 @@ namespace VP2017
     {
 
         string path = "$2,000 Lose - Who Wants to Be a Millionaire- (online-audio-converter.com).wav";
-        SoundPlayer player;
+        SoundPlayer player1;
         int brPrasanje;
         string correct;
         public WrongAnswerForm(int brojPrasanje, string corrAnswer)
         {
             InitializeComponent();
-            player = new SoundPlayer(path);
+            player1 = new SoundPlayer(path);
             this.brPrasanje = brojPrasanje;
             this.correct = corrAnswer;
-            player.Play();
+            player1.Play();
             timer1.Start();
         }
 
@@ -44,8 +44,13 @@ namespace VP2017
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            player.Stop();
+            player1.Stop();
             this.Close();
+        }
+
+        private void WrongAnswerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timer1.Stop();
         }
 
         

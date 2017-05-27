@@ -72,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::VP2017.Properties.Resources.Background1;
-            this.ClientSize = new System.Drawing.Size(746, 407);
+            this.ClientSize = new System.Drawing.Size(746, 406);
             this.Controls.Add(this.btnInstructions);
             this.Controls.Add(this.btnPlay);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -80,7 +80,7 @@
             this.MinimumSize = new System.Drawing.Size(762, 445);
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StartForm";
+            this.Text = "Кој сака да биде милионер?";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StartForm_FormClosed);
             this.Load += new System.EventHandler(this.StartForm_Load);
             this.ResumeLayout(false);

@@ -36,13 +36,9 @@
             this.label3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // timerBoja
-            // 
-            this.timerBoja.Tick += new System.EventHandler(this.timerBoja_Tick);
-            // 
             // timer1
             // 
-            this.timer1.Interval = 3000;
+            this.timer1.Interval = 4000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
@@ -67,7 +63,7 @@
             this.lblPrice.Enabled = false;
             this.lblPrice.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(12, 63);
+            this.lblPrice.Location = new System.Drawing.Point(12, 69);
             this.lblPrice.Multiline = true;
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.ReadOnly = true;
@@ -104,7 +100,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Status";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Load += new System.EventHandler(this.Status_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Status_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

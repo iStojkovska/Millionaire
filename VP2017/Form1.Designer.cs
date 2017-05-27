@@ -118,6 +118,8 @@
             this.btnAnswerA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnswerA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAnswerA.FlatAppearance.BorderSize = 0;
+            this.btnAnswerA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnAnswerA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnswerA.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAnswerA.ForeColor = System.Drawing.Color.White;
@@ -176,6 +178,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(38, 293);
@@ -187,6 +190,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(38, 371);
@@ -202,6 +206,8 @@
             this.btnAnswerC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnswerC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAnswerC.FlatAppearance.BorderSize = 0;
+            this.btnAnswerC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnAnswerC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnswerC.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAnswerC.ForeColor = System.Drawing.Color.White;
@@ -217,6 +223,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(298, 371);
@@ -232,6 +239,8 @@
             this.btnAnswerD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnswerD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAnswerD.FlatAppearance.BorderSize = 0;
+            this.btnAnswerD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnAnswerD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnswerD.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAnswerD.ForeColor = System.Drawing.Color.White;
@@ -247,6 +256,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(298, 293);
@@ -262,6 +272,8 @@
             this.btnAnswerB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnswerB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAnswerB.FlatAppearance.BorderSize = 0;
+            this.btnAnswerB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnAnswerB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnswerB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAnswerB.ForeColor = System.Drawing.Color.White;

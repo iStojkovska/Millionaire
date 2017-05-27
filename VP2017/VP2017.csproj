@@ -120,6 +120,12 @@
     <Compile Include="Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinnerForm.Designer.cs">
+      <DependentUpon>WinnerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WrongAnswerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinnerForm.resx">
+      <DependentUpon>WinnerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WrongAnswerForm.resx">
       <DependentUpon>WrongAnswerForm.cs</DependentUpon>

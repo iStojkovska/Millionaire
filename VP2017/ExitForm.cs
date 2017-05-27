@@ -16,10 +16,10 @@ namespace VP2017
         int brojPrasanje;
         public ExitForm(int brojPrasanje)
         {
-            
             InitializeComponent();
             player = new SoundPlayer(path);
             this.brojPrasanje = brojPrasanje-1;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         }
         private long GenerateSum(int i)
         {
