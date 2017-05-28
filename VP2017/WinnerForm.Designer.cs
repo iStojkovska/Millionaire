@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinnerForm));
             this.btnClose = new System.Windows.Forms.Button();
             this.tbKolkuDenari = new System.Windows.Forms.TextBox();
             this.tbOtkaziSe = new System.Windows.Forms.TextBox();
@@ -90,9 +91,10 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbKolkuDenari);
             this.Controls.Add(this.tbOtkaziSe);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WinnerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "WinnerForm";
+            this.Text = "Победивте!";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -11,14 +11,17 @@ namespace VP2017
 {
     public partial class FormFinalAnswer : Form
     {
+        private int brPrasanje;
         string path = "final answer.wav";
         SoundPlayer player;
-        public FormFinalAnswer()
+        public FormFinalAnswer(int i)
         {
             
             InitializeComponent();
             player = new SoundPlayer(path);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.brPrasanje = i;
+            this.Text = "Прашање број: " + this.brPrasanje;
         }
 
         private void btnOK_Click(object sender, EventArgs e)

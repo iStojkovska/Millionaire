@@ -406,7 +406,7 @@ namespace VP2017
             //dodadeno!!!
             play.Stop();
             btnAnswerA.ForeColor = Color.Orange;
-            FormFinalAnswer form = new FormFinalAnswer();
+            FormFinalAnswer form = new FormFinalAnswer(i);
             if (form.ShowDialog().Equals(DialogResult.OK))
             {
                 if (btnAnswerA.Text == correctAnswer)
@@ -443,7 +443,7 @@ namespace VP2017
             //dodadeno!!!
             play.Stop();
             btnAnswerB.ForeColor = Color.Orange;
-            FormFinalAnswer form = new FormFinalAnswer();
+            FormFinalAnswer form = new FormFinalAnswer(i);
             if (form.ShowDialog().Equals(DialogResult.OK))
             {
                 if (btnAnswerB.Text == correctAnswer)
@@ -480,7 +480,7 @@ namespace VP2017
             //dodadeno!!!
             play.Stop();
             btnAnswerC.ForeColor = Color.Orange;
-            FormFinalAnswer form = new FormFinalAnswer();
+            FormFinalAnswer form = new FormFinalAnswer(i);
             if (form.ShowDialog().Equals(DialogResult.OK))
             {
                 if (btnAnswerC.Text == correctAnswer)
@@ -517,7 +517,7 @@ namespace VP2017
             //dodadeno!!!
             play.Stop();
             btnAnswerD.ForeColor = Color.Orange;
-            FormFinalAnswer form = new FormFinalAnswer();
+            FormFinalAnswer form = new FormFinalAnswer(i);
             if (form.ShowDialog().Equals(DialogResult.OK))
             {
                 if (btnAnswerD.Text == correctAnswer)
