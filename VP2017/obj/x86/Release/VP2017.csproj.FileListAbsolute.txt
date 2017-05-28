@@ -24,3 +24,23 @@ E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj
 E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Release\VP2017.csproj.GenerateResource.Cache
 E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Release\VP2017.exe
 E:\6. Sesti Semestar\Vizuelno Programiranje\Proekt\vp2017\Millionaire\VP2017\obj\x86\Release\VP2017.pdb
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\bin\Release\DataBase\Questions.mdf
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\bin\Release\DataBase\Questions_log.ldf
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\bin\Release\VP2017.exe.config
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\bin\Release\VP2017.exe
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\bin\Release\VP2017.pdb
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.csprojResolveAssemblyReference.cache
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.CallForm.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.ChartForm.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.Form1.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.FormFinalAnswer.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.InstructionsForm.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.ExitForm.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.Properties.Resources.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.StartForm.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.Status.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.WinnerForm.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.WrongAnswerForm.resources
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.csproj.GenerateResource.Cache
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.exe
+D:\Documents\ivana\fakultet\fakultet\shesti semestar\vizuelno programiranje\proekt\proekt-final\Millionaire\VP2017\obj\x86\Release\VP2017.pdb
